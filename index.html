@@ -1,0 +1,374 @@
+
+<h2 class="sr-only">App 2 MENTE.IA: Sistema Anti-Procrastinação com IA — 8 capítulos, 30 prompts e templates de rotina prontos para usar</h2>
+<style>
+:root{
+  --app-bg:#f6f8f7;
+  --panel:#ffffff;
+  --panel-soft:#f3f6f5;
+  --text:#17211d;
+  --muted:#5f6f68;
+  --muted-2:#8a9892;
+  --line:#dbe4df;
+  --green:#1D9E75;
+  --green-dark:#085041;
+  --green-soft:#E1F5EE;
+  --amber:#BA7517;
+  --amber-soft:#FAEEDA;
+  --purple:#7F77DD;
+  --purple-soft:#EEEDFE;
+  --red:#993C1D;
+  --red-soft:#FAECE7;
+  --radius:18px;
+  --radius-sm:12px;
+}
+*{box-sizing:border-box}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#app2.app{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;max-width:1120px;margin:24px auto;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel);box-shadow:0 18px 45px rgba(23,33,29,.08)}
+.hdr{background:linear-gradient(135deg,#ffffff 0%,#eef8f4 100%);border-bottom:1px solid var(--line);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;position:sticky;top:0;z-index:4}
+.hdr-left{display:flex;align-items:center;gap:14px;min-width:0}
+.logo-pill{font-size:12px;font-weight:800;letter-spacing:.08em;padding:7px 12px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);box-shadow:inset 0 0 0 1px rgba(29,158,117,.18);white-space:nowrap}
+.hdr-title{font-size:18px;font-weight:800;color:var(--text);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hdr-sub{font-size:13px;color:var(--muted);margin-top:3px}
+.prog-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.prog-bar{width:120px;height:8px;background:#dce7e2;border-radius:999px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--green),#3fc498);border-radius:999px;transition:width .35s ease}
+.prog-lbl{font-size:13px;font-weight:700;color:var(--green-dark);white-space:nowrap}
+.body{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:620px;background:var(--panel)}
+.sb{border-right:1px solid var(--line);overflow-y:auto;max-height:620px;background:#fbfdfc;padding:12px 0}
+.sb-lbl{font-size:11px;font-weight:800;color:var(--muted-2);padding:10px 18px 8px;letter-spacing:.12em;text-transform:uppercase}
+.ni{display:grid;grid-template-columns:28px 1fr 18px;align-items:center;gap:10px;margin:3px 10px;padding:11px 10px;cursor:pointer;border:1px solid transparent;border-radius:12px;transition:background .15s,border-color .15s,transform .15s}
+.ni:hover{background:var(--panel-soft);transform:translateX(2px)}
+.ni.on{background:var(--green-soft);border-color:rgba(29,158,117,.25)}
+.ni-n{font-size:11px;font-weight:800;color:var(--muted-2);text-align:center}
+.ni-t{font-size:13.5px;color:var(--muted);line-height:1.25;min-width:0}
+.ni.on .ni-t{color:var(--green-dark);font-weight:800}
+.ni-dot{width:16px;height:16px;border-radius:50%;border:2px solid #c8d5cf;background:#fff;flex-shrink:0}
+.ni-dot.ok{background:var(--green);border-color:var(--green);position:relative}
+.ni-dot.ok::after{content:'';position:absolute;left:4px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ct{overflow-y:auto;max-height:620px;padding:34px 42px 40px;background:radial-gradient(circle at top right,rgba(225,245,238,.6),transparent 310px),var(--panel)}
+.ey{display:inline-flex;font-size:11px;font-weight:900;color:var(--green-dark);letter-spacing:.12em;margin-bottom:12px;text-transform:uppercase;background:var(--green-soft);border-radius:999px;padding:6px 10px}
+.ttl{font-size:30px;font-weight:850;color:var(--text);line-height:1.12;margin:0 0 20px;letter-spacing:-.03em;max-width:760px}
+.body-p{font-size:16px;color:var(--muted);line-height:1.78;margin:0 0 16px;max-width:820px}
+.body-p strong{color:var(--text);font-weight:800}
+.sec-t{font-size:18px;font-weight:850;color:var(--text);margin:28px 0 12px;letter-spacing:-.01em}
+.box{padding:16px 18px;margin:18px 0;border:1px solid transparent;border-left-width:5px;border-radius:14px;max-width:860px}
+.box-g{background:var(--green-soft);border-color:rgba(29,158,117,.25);border-left-color:var(--green)}
+.box-a{background:var(--amber-soft);border-color:rgba(186,117,23,.22);border-left-color:var(--amber)}
+.box-p{background:var(--purple-soft);border-color:rgba(127,119,221,.22);border-left-color:var(--purple)}
+.box-r{background:var(--red-soft);border-color:rgba(153,60,29,.22);border-left-color:var(--red)}
+.box-lbl{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.box-g .box-lbl{color:var(--green-dark)}.box-a .box-lbl{color:#633806}.box-p .box-lbl{color:#3C3489}.box-r .box-lbl{color:#712B13}
+.box-txt{font-size:14.5px;line-height:1.68;color:var(--muted)}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:16px;margin:14px 0 18px;overflow:hidden;box-shadow:0 8px 20px rgba(23,33,29,.045)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;border-bottom:1px solid var(--line);background:#fbfdfc}
+.pb-g{font-size:12px;font-weight:900;color:var(--green-dark);background:var(--green-soft);padding:5px 10px;border-radius:999px}
+.cpb{font-size:13px;color:var(--muted);background:#fff;border:1px solid #cbd8d2;border-radius:10px;padding:7px 12px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .15s}
+.cpb:hover{background:var(--green-soft);color:var(--green-dark);border-color:#9fd8c5}.cpb.ok{color:#fff;background:var(--green);border-color:var(--green)}
+.pdesc{font-size:13.5px;color:var(--muted);padding:12px 15px 0;font-weight:700}
+.ptxt{font-family:Consolas,Monaco,'Courier New',monospace;font-size:13px;color:var(--text);padding:14px 15px;line-height:1.65;background:#f8faf9;border-top:1px solid var(--line);margin-top:10px;white-space:pre-wrap;word-break:break-word}
+.bl,.nl{margin:10px 0 18px;padding-left:0;list-style:none;max-width:860px}.bl li,.nl li{font-size:15.5px;color:var(--muted);padding:6px 0 6px 28px;position:relative;line-height:1.65}.bl li::before{content:'•';position:absolute;left:8px;color:var(--green);font-weight:900}.nl{counter-reset:n}.nl li{counter-increment:n}.nl li::before{content:counter(n);position:absolute;left:0;top:8px;width:18px;height:18px;border-radius:50%;background:var(--green-soft);color:var(--green-dark);font-weight:900;font-size:11px;text-align:center;line-height:18px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:14px 0 20px}.tbl{width:100%;border-collapse:collapse;font-size:14px;background:#fff}.tbl th{background:var(--green-soft);color:var(--green-dark);font-weight:900;padding:12px 14px;text-align:left;font-size:13px}.tbl td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}.tbl tr:last-child td{border:none}.tbl tr:nth-child(even) td{background:#fbfdfc}
+.ftr{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.mk-btn{font-size:14px;font-weight:800;color:var(--green-dark);background:var(--green-soft);border:1px solid #9dddc7;border-radius:12px;padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .15s}.mk-btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(29,158,117,.15)}.mk-btn.done{background:var(--green);color:#fff;border-color:var(--green)}
+.nvbtns{display:flex;gap:10px}.nvb{font-size:14px;font-weight:700;color:var(--muted);background:#fff;border:1px solid #cbd8d2;border-radius:12px;padding:10px 14px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px}.nvb:hover{background:var(--panel-soft);color:var(--text)}.nvb:disabled{opacity:.35;cursor:default;transform:none}
+.sg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0 24px;max-width:700px}.sc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;box-shadow:0 8px 18px rgba(23,33,29,.04)}.sv{font-size:34px;font-weight:900;color:var(--green-dark);line-height:1}.sl{font-size:12px;color:var(--muted);margin-top:6px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.tmpl{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0 20px;box-shadow:0 8px 18px rgba(23,33,29,.04);max-width:760px}.tmpl-t{font-size:14px;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:7px}.tmpl-row{display:grid;grid-template-columns:92px 1fr;gap:8px 14px;font-size:14px;color:var(--muted);line-height:1.5}.tmpl-k{color:var(--green-dark);font-weight:900;white-space:nowrap}
+@media (max-width:760px){#app2.app{margin:10px;border-radius:16px}.hdr{align-items:flex-start;flex-direction:column;padding:16px}.hdr-title{font-size:16px;white-space:normal}.prog-wrap{width:100%}.prog-bar{flex:1;width:auto}.body{grid-template-columns:1fr}.sb{max-height:none;border-right:0;border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px}.sb-lbl{display:none}.ni{min-width:180px;margin:0;grid-template-columns:24px 1fr 18px}.ct{max-height:none;padding:24px 18px}.ttl{font-size:24px}.body-p{font-size:15px}.sg{grid-template-columns:1fr}.ftr{align-items:stretch}.mk-btn,.nvbtns{width:100%}.nvbtns .nvb{flex:1;justify-content:center}.tmpl-row{grid-template-columns:1fr}.tmpl-k{margin-top:6px}}
+</style>
+
+<div class="app" id="app2">
+<div class="hdr">
+  <div class="hdr-left">
+    <span class="logo-pill">MENTE.IA</span>
+    <div><div class="hdr-title">Sistema Anti-Procrastinação com IA</div><div class="hdr-sub">8 capítulos · 30 prompts · templates de rotina</div></div>
+  </div>
+  <div class="prog-wrap">
+    <div class="prog-bar"><div class="prog-fill" id="p2-fill" style="width:0%"></div></div>
+    <span class="prog-lbl" id="p2-lbl">0 / 8</span>
+  </div>
+</div>
+<div class="body">
+<div class="sb">
+  <div class="sb-lbl">Sumário</div>
+  <div class="ni on" onclick="g2(0)" id="n2-0"><span class="ni-n">—</span><span class="ni-t">Introdução</span><span class="ni-dot" id="d2-0"></span></div>
+  <div class="ni" onclick="g2(1)" id="n2-1"><span class="ni-n">01</span><span class="ni-t">Por que você procrastina</span><span class="ni-dot" id="d2-1"></span></div>
+  <div class="ni" onclick="g2(2)" id="n2-2"><span class="ni-n">02</span><span class="ni-t">O sistema dos 3 blocos</span><span class="ni-dot" id="d2-2"></span></div>
+  <div class="ni" onclick="g2(3)" id="n2-3"><span class="ni-n">03</span><span class="ni-t">IA como parceira de foco</span><span class="ni-dot" id="d2-3"></span></div>
+  <div class="ni" onclick="g2(4)" id="n2-4"><span class="ni-n">04</span><span class="ni-t">Rotina matinal com IA</span><span class="ni-dot" id="d2-4"></span></div>
+  <div class="ni" onclick="g2(5)" id="n2-5"><span class="ni-n">05</span><span class="ni-t">Gestão de energia, não tempo</span><span class="ni-dot" id="d2-5"></span></div>
+  <div class="ni" onclick="g2(6)" id="n2-6"><span class="ni-n">06</span><span class="ni-t">Quebrando o ciclo da culpa</span><span class="ni-dot" id="d2-6"></span></div>
+  <div class="ni" onclick="g2(7)" id="n2-7"><span class="ni-n">07</span><span class="ni-t">Ambiente e gatilhos de foco</span><span class="ni-dot" id="d2-7"></span></div>
+  <div class="ni" onclick="g2(8)" id="n2-8"><span class="ni-n">08</span><span class="ni-t">Seu sistema definitivo</span><span class="ni-dot" id="d2-8"></span></div>
+</div>
+<div class="ct" id="ct2"></div>
+</div>
+</div>
+
+<script>
+const CAPS2=[
+{ey:'',ttl:'Sistema Anti-Procrastinação com IA',h:`
+<div class="sg">
+  <div class="sc"><div class="sv">8</div><div class="sl">Capítulos</div></div>
+  <div class="sc"><div class="sv">30</div><div class="sl">Prompts</div></div>
+  <div class="sc"><div class="sv">7</div><div class="sl">Templates</div></div>
+</div>
+<p class="body-p">Você não é preguiçoso. Você está sobrecarregado, sem clareza e sem um sistema. A procrastinação não é um defeito de caráter — é uma resposta previsível a tarefas mal definidas, energia mal gerida e ausência de estrutura.</p>
+<p class="body-p">Este app vai te dar o sistema que falta. Oito capítulos práticos, 30 prompts prontos para usar com IA e 7 templates de rotina que você adapta à sua realidade em menos de 1 hora.</p>
+<div class="box box-g"><div class="box-lbl">O que você vai construir</div><div class="box-txt">Um sistema pessoal anti-procrastinação que usa IA como parceira de foco — para planejar, priorizar, iniciar tarefas difíceis e manter consistência mesmo nos dias ruins.</div></div>
+`,pr:[]},
+
+{ey:'Capítulo 1',ttl:'Por que você procrastina — e por que não é culpa sua',h:`
+<p class="body-p">Antes de qualquer técnica, precisamos entender o mecanismo. Procrastinar não é falta de vontade. É o cérebro tentando se proteger de algo que percebe como ameaça — incerteza, julgamento, fracasso, ou simplesmente esforço cognitivo elevado.</p>
+<div class="sec-t">1.1 — Os 4 gatilhos neurológicos</div>
+<ul class="bl">
+  <li><strong>Tarefa mal definida:</strong> o cérebro evita o que não consegue visualizar. "Trabalhar no projeto" é impossível de começar; "escrever o primeiro parágrafo da introdução" é concreto.</li>
+  <li><strong>Medo de julgamento:</strong> o perfeccionismo é procrastinação disfarçada de padrão elevado. Não começar garante que você nunca vai falhar.</li>
+  <li><strong>Excesso de opções:</strong> paradoxo da escolha — quando há muitas tarefas possíveis, o cérebro escolhe nenhuma.</li>
+  <li><strong>Recompensa distante:</strong> benefícios futuros são abstratos; o desconforto de agora é imediato. O cérebro sempre prefere o alívio imediato.</li>
+</ul>
+<div class="box box-a"><div class="box-lbl">Dado importante</div><div class="box-txt">Pesquisadores da Universidade de Calgary identificaram que procrastinadores crônicos têm maior densidade de amígdala cerebral — a região de resposta ao medo. Procrastinar é literalmente uma resposta de fuga ao desconforto, não preguiça.</div></div>
+<div class="sec-t">1.2 — Os 3 tipos de procrastinador</div>
+<div class="tbl-wrap" style="overflow-x:auto">
+<table class="tbl">
+  <tr><th>Tipo</th><th>Como se manifesta</th><th>Estratégia principal</th></tr>
+  <tr><td>Perfeccionista</td><td>Não começa porque não tem tudo perfeito</td><td>Versão mínima viável → iterar</td></tr>
+  <tr><td>Sobrecarregado</td><td>Tem tudo para fazer e não sabe por onde começar</td><td>Sistema de priorização com IA</td></tr>
+  <tr><td>Disperso</td><td>Começa várias coisas e não termina nenhuma</td><td>Blocos de tempo + regra do foco único</td></tr>
+</table>
+</div>
+<div class="box box-p"><div class="box-lbl">Exercício de autoconhecimento</div><div class="box-txt">Qual dos três tipos você se identifica mais? Essa resposta vai determinar quais capítulos são mais urgentes para você. Use o Prompt 1 abaixo para aprofundar o diagnóstico.</div></div>
+`,pr:[
+{n:'P01',d:'Diagnóstico do seu padrão de procrastinação',t:'Quero entender melhor meu padrão de procrastinação. Vou te descrever minha situação típica: [descreva como você procrastina — o que acontece, que tipo de tarefa você evita, como se sente antes de começar]. Com base nisso: 1) Identifique meu tipo principal de procrastinação, 2) Explique o mecanismo psicológico por trás, 3) Sugira as 3 estratégias mais eficazes para o meu perfil específico.'},
+{n:'P02',d:'Transformar tarefa vaga em tarefa concreta',t:'Tenho esta tarefa no meu to-do que fica me travando: "[cole a tarefa vaga]". Ela está me causando procrastinação porque é muito abstrata. Me ajude a: 1) Dividir em subtarefas de no máximo 25 minutos cada, 2) Definir o critério de "feito" para cada subtarefa, 3) Identificar qual é a primeira ação física possível (a menor ação possível para começar).'},
+]},
+
+{ey:'Capítulo 2',ttl:'O sistema dos 3 blocos — estrutura que elimina a paralisia',h:`
+<p class="body-p">O maior inimigo da produtividade não é a distração — é a lista de tarefas sem estrutura. Quando tudo é igualmente urgente, nada é urgente. O sistema dos 3 blocos resolve isso com uma lógica simples e brutal.</p>
+<div class="sec-t">2.1 — Os 3 blocos diários</div>
+<div class="box box-g"><div class="box-lbl">Bloco A — Trabalho profundo (90–120 min)</div><div class="box-txt">Uma única tarefa cognitivamente exigente, feita no momento de maior energia. Sem notificações, sem interrupções. Este bloco move o ponteiro — é onde acontece o trabalho que realmente importa.</div></div>
+<div class="box box-a"><div class="box-lbl">Bloco B — Trabalho raso (60 min)</div><div class="box-txt">E-mails, reuniões rápidas, tarefas administrativas, revisões. Cognitivamente leve. Pode ser feito com energia moderada, após o almoço ou no fim da tarde.</div></div>
+<div class="box box-p"><div class="box-lbl">Bloco C — Processamento (30 min)</div><div class="box-txt">Inbox zero, atualizar o to-do, revisar o dia, planejar o amanhã. Momento de fechar ciclos e preparar o terreno para o próximo Bloco A.</div></div>
+<div class="sec-t">2.2 — Como usar IA para planejar os blocos</div>
+<p class="body-p">A IA não vai trabalhar por você — mas vai te ajudar a decidir o que vai em cada bloco, eliminar o tempo gasto em "o que eu faço agora?" e garantir que o Bloco A nunca seja desperdiçado com trabalho raso.</p>
+<div class="sec-t">2.3 — Template do dia ideal</div>
+<div class="tmpl">
+  <div class="tmpl-t"><i class="ti ti-calendar" style="font-size:15px;color:#1D9E75" aria-hidden="true"></i> Estrutura de dia produtivo</div>
+  <div class="tmpl-row">
+    <span class="tmpl-k">06h–07h</span><span>Rotina matinal (cap. 4)</span>
+    <span class="tmpl-k">07h–09h</span><span>Bloco A — tarefa mais importante do dia</span>
+    <span class="tmpl-k">09h–10h</span><span>Bloco B — comunicação e reuniões</span>
+    <span class="tmpl-k">10h–12h</span><span>Bloco A continuação ou segunda tarefa</span>
+    <span class="tmpl-k">12h–13h</span><span>Pausa real (sem tela)</span>
+    <span class="tmpl-k">13h–14h30</span><span>Bloco B — administrativo</span>
+    <span class="tmpl-k">14h30–15h</span><span>Bloco C — processamento e planejamento</span>
+    <span class="tmpl-k">15h+</span><span>Tarefas menores, aprendizado, criação leve</span>
+  </div>
+</div>
+`,pr:[
+{n:'P03',d:'Planejar os blocos do dia com IA',t:'Aqui estão todas as tarefas que preciso fazer hoje: [liste tudo]. Meu momento de maior energia é [manhã / tarde / noite]. Tenho reuniões em: [horários]. Use o sistema dos 3 blocos (A=profundo, B=raso, C=processamento) para organizar meu dia. Para cada bloco: diga quais tarefas entram, por quê, e qual é a ordem de execução.'},
+{n:'P04',d:'Identificar a tarefa A do dia',t:'De tudo que tenho para fazer hoje e esta semana, qual deveria ser meu Bloco A de amanhã? Minhas tarefas: [liste]. Meus objetivos da semana: [liste]. Critério: a tarefa A é aquela que, se eu fizer apenas ela, o dia já terá valido. Justifique sua escolha.'},
+]},
+
+{ey:'Capítulo 3',ttl:'IA como parceira de foco — técnicas que funcionam',h:`
+<p class="body-p">A IA não é apenas uma ferramenta de produção — é um parceiro de responsabilidade, um quebrador de bloqueios e um acelerador de início. Este capítulo ensina as técnicas específicas para usar ChatGPT como aliado contra a procrastinação.</p>
+<div class="sec-t">3.1 — A técnica do "ponto de partida"</div>
+<p class="body-p">O maior obstáculo não é a tarefa em si — é o momento de começar. A IA pode eliminar a barreira de entrada pedindo que ela faça a parte mais difícil: a primeira frase, o primeiro tópico, o primeiro esboço.</p>
+<div class="box box-g"><div class="box-lbl">Como funciona</div><div class="box-txt">Em vez de sentar em branco diante da tarefa, você pede à IA um esboço inicial imperfeito. Seu trabalho passa de "criar do zero" para "revisar e melhorar" — muito menos aterrorizante para o cérebro.</div></div>
+<div class="sec-t">3.2 — Body doubling com IA</div>
+<p class="body-p">Body doubling é a técnica de trabalhar na presença de outra pessoa — mesmo que ela não faça nada. A presença reduz a procrastinação. A IA pode simular isso: você anuncia a tarefa, ela acompanha, você reporta o progresso.</p>
+<div class="sec-t">3.3 — A sessão Pomodoro assistida por IA</div>
+<ol class="nl">
+  <li>Defina a tarefa específica do próximo bloco de 25 min com ajuda da IA</li>
+  <li>Peça à IA que quebre a tarefa em micro-etapas de 5 min</li>
+  <li>Trabalhe por 25 min sem interrupção</li>
+  <li>Reporte o resultado à IA e peça o próximo micro-bloco</li>
+  <li>Após 4 ciclos, peça à IA uma análise do seu progresso</li>
+</ol>
+<div class="sec-t">3.4 — Desbloqueador de tarefas travadas</div>
+<p class="body-p">Quando uma tarefa específica está travando há mais de 2 dias, ela precisa de diagnóstico. Use o Prompt 7 para identificar o que realmente está travando — raramente é o que parece.</p>
+`,pr:[
+{n:'P05',d:'Ponto de partida — eliminar a tela em branco',t:'Estou travado nesta tarefa: [descreva]. Não consigo começar. Me dê um esboço inicial imperfeito, incompleto e rascunhado — não precisa ser bom, só precisa existir. Com esse esboço na minha frente, eu mesmo vou revisar e melhorar. Foco em estrutura básica, não em qualidade.'},
+{n:'P06',d:'Body doubling com IA — sessão de foco',t:'Vou trabalhar nos próximos 25 minutos em: [tarefa específica]. O resultado esperado ao final é: [descreva]. Aguarda eu te reportar o progresso quando terminar. Se eu vier falar de outra coisa antes dos 25 minutos, me lembre gentilmente da tarefa.'},
+{n:'P07',d:'Diagnóstico de tarefa travada',t:'Esta tarefa está no meu to-do há [X dias] e não consigo avançar: [descreva]. Não estou procrastinando por preguiça — tem algo específico travando. Me faça 5 perguntas para diagnosticar o real obstáculo. Depois, com base nas minhas respostas, sugira a menor ação possível para destravar.'},
+]},
+
+{ey:'Capítulo 4',ttl:'Rotina matinal com IA — os primeiros 60 minutos que determinam o dia',h:`
+<p class="body-p">Os primeiros 60 minutos do dia definem o tom de tudo que vem depois. Uma rotina matinal estruturada com IA transforma a manhã de caótica em um ritual de ativação — e o dia que começa bem raramente termina mal.</p>
+<div class="sec-t">4.1 — Os 5 elementos da rotina matinal de alto desempenho</div>
+<ol class="nl">
+  <li><strong>Revisão de objetivos (5 min):</strong> releia seus 3 objetivos da semana. A IA pode te mandar um resumo diário por e-mail ou você lê direto no app.</li>
+  <li><strong>Planejamento do dia (10 min):</strong> use o Prompt 3 do capítulo 2 para definir os 3 blocos do dia com base nas tarefas pendentes.</li>
+  <li><strong>Tarefa A de 5 minutos (5 min):</strong> faça apenas 5 minutos da tarefa mais difícil do dia. Só começar. O cérebro vai querer continuar.</li>
+  <li><strong>Revisão de energia (2 min):</strong> pergunte à IA como otimizar sua energia para o tipo de tarefa do Bloco A de hoje.</li>
+  <li><strong>Intenção do dia (3 min):</strong> escreva uma frase — "hoje vou terminar X" — e compartilhe com a IA para responsabilidade.</li>
+</ol>
+<div class="box box-g"><div class="box-lbl">Regra dos primeiros 90 segundos</div><div class="box-txt">Não cheque o celular, e-mail ou redes sociais nos primeiros 90 minutos do dia. O que entra primeiro no seu cérebro define sua agenda mental. Deixe a agenda mental ser a sua, não a dos outros.</div></div>
+<div class="sec-t">4.2 — Template de rotina matinal</div>
+<div class="tmpl">
+  <div class="tmpl-t"><i class="ti ti-sun" style="font-size:15px;color:#BA7517" aria-hidden="true"></i> Rotina matinal com IA (60 min)</div>
+  <div class="tmpl-row">
+    <span class="tmpl-k">+00 min</span><span>Acordar · sem celular por 90 min</span>
+    <span class="tmpl-k">+15 min</span><span>Água · movimento leve · alimentação</span>
+    <span class="tmpl-k">+30 min</span><span>Abrir o app → revisar objetivos da semana</span>
+    <span class="tmpl-k">+35 min</span><span>Prompt de planejamento dos 3 blocos do dia</span>
+    <span class="tmpl-k">+45 min</span><span>5 minutos da tarefa A (só começar)</span>
+    <span class="tmpl-k">+50 min</span><span>Intenção do dia declarada à IA</span>
+    <span class="tmpl-k">+60 min</span><span>Bloco A completo começa</span>
+  </div>
+</div>
+`,pr:[
+{n:'P08',d:'Ativação matinal — planejamento do dia',t:'Bom dia. Hoje é [dia da semana]. Meus objetivos desta semana são: [liste]. Minhas tarefas pendentes: [liste]. Minha energia hoje está [alta / média / baixa]. Com base nisso: 1) Defina meu Bloco A de hoje (1 tarefa), 2) Organize as tarefas nos 3 blocos, 3) Me dê uma frase de intenção do dia. Seja direto e objetivo — tenho 10 minutos para esse planejamento.'},
+{n:'P09',d:'Revisão noturna — fechar o dia',t:'Fim do dia. Hoje eu deveria ter feito: [tarefa A planejada]. O que realmente aconteceu: [descreva]. Nível de foco hoje de 1 a 10: [número]. O que atrapalharam meu foco: [liste]. Com base nisso: 1) Avalie meu dia sem julgamento, 2) Identifique 1 aprendizado sobre meu padrão, 3) Sugira o Bloco A de amanhã.'},
+]},
+
+{ey:'Capítulo 5',ttl:'Gestão de energia, não de tempo — o que realmente determina sua produtividade',h:`
+<p class="body-p">Você não está sem tempo. Você está sem energia no tempo certo. Gerenciar energia é mais importante do que gerenciar horas — e a IA pode te ajudar a mapear seu ritmo ultradian e alocar tarefas de acordo com ele.</p>
+<div class="sec-t">5.1 — Os 4 tipos de energia</div>
+<ul class="bl">
+  <li><strong>Energia física:</strong> sono, alimentação, movimento. Base de tudo. Sem ela, nenhuma técnica funciona.</li>
+  <li><strong>Energia emocional:</strong> estresse, relacionamentos, conflitos não resolvidos. Drena foco cognitivo silenciosamente.</li>
+  <li><strong>Energia mental:</strong> carga cognitiva acumulada, decisões, foco. Se depleta ao longo do dia.</li>
+  <li><strong>Energia de propósito:</strong> sentido, motivação, alinhamento com objetivos. Amplifica as outras três.</li>
+</ul>
+<div class="sec-t">5.2 — Mapeando seus picos de energia</div>
+<p class="body-p">Por 5 dias, registre sua energia de 1 a 10 a cada 2 horas. No fim da semana, você terá seu mapa pessoal de energia — e poderá alocar o Bloco A sempre no pico.</p>
+<div class="box box-a"><div class="box-lbl">Cronótipo e produtividade</div><div class="box-txt">Corujas (pico à noite) têm tanta capacidade de foco quanto pardais (pico de manhã) — desde que trabalhem no seu horário. Nunca force trabalho profundo fora do seu pico de energia.</div></div>
+<div class="sec-t">5.3 — Recuperação ativa</div>
+<p class="body-p">Pausas não são perda de tempo — são investimento em desempenho. A ciência mostra que pausas de 5–10 minutos a cada 90 minutos de trabalho profundo recuperam 80% da capacidade cognitiva.</p>
+`,pr:[
+{n:'P10',d:'Mapear seu ritmo de energia',t:'Quero mapear meu ritmo pessoal de energia. Vou registrar minha energia de 1 a 10 ao longo de [X dias]. Hoje foram estes níveis (a cada 2h): [liste horário + nível]. Com base nisso: 1) Identifique meus picos de energia, 2) Identifique meus vales, 3) Sugira como distribuir os tipos de tarefa (A/B/C) ao longo do dia alinhado ao meu ritmo.'},
+{n:'P11',d:'Recuperação de energia em tempo real',t:'Minha energia está em [número]/10 agora e tenho [X horas] de trabalho ainda. Estou me sentindo [descreva: mental esgotado, emocionalmente pesado, fisicamente cansado]. Me dê: 1) Um protocolo de recuperação rápida de 10 minutos para o meu caso específico, 2) Que tipo de tarefa devo fazer agora dado meu nível de energia, 3) Como preservar energia para terminar o dia bem.'},
+]},
+
+{ey:'Capítulo 6',ttl:'Quebrando o ciclo da culpa — como se recuperar sem autossabotagem',h:`
+<p class="body-p">O maior sabotador da produtividade não é a procrastinação em si — é a culpa que vem depois. A culpa drena energia, perpetua o ciclo e cria um estado mental que torna mais provável procrastinar de novo.</p>
+<div class="sec-t">6.1 — O ciclo de autossabotagem</div>
+<ol class="nl">
+  <li>Procrastina uma tarefa importante</li>
+  <li>Sente culpa e vergonha</li>
+  <li>Culpa drena energia cognitiva</li>
+  <li>Com menos energia, procrastina mais</li>
+  <li>Ciclo se repete com intensidade crescente</li>
+</ol>
+<div class="box box-r"><div class="box-lbl">O que NÃO fazer</div><div class="box-txt">Não revisite o passado tentando "se punir em produtividade". Trabalhar compulsivamente para compensar um dia ruim gera mais burnout do que progresso. O passado não muda — o próximo bloco de foco, muda.</div></div>
+<div class="sec-t">6.2 — O protocolo de reinício</div>
+<div class="box box-g"><div class="box-lbl">4 passos para sair da espiral</div><div class="box-txt">1. Reconheça sem dramatizar: "hoje não foi como planejei" — ponto final. Sem análise excessiva agora.<br>2. Identifique 1 coisa que você fez mesmo que pequena. Progresso real existe.<br>3. Defina apenas a próxima ação física — não o plano do mês.<br>4. Comece. Os primeiros 2 minutos é tudo que você precisa comprometer.</div></div>
+<div class="sec-t">6.3 — Autocompaixão como ferramenta de desempenho</div>
+<p class="body-p">Pesquisas da professora Kristin Neff (UT Austin) mostram que autocompaixão — não autoindulgência — está associada a maior responsabilidade pessoal e melhor desempenho de longo prazo. Tratar-se com gentileza depois de um dia ruim não é fraqueza: é estratégia.</p>
+`,pr:[
+{n:'P12',d:'Protocolo de reinício após dia improdutivo',t:'Hoje foi um dia difícil em termos de produtividade. O que planejei: [liste]. O que realmente fiz: [liste]. Me sinto [culpado / frustrado / esgotado]. Sem me julgar e sem sugerir que eu "trabalhe mais amanhã": 1) Me ajude a reconhecer o que foi feito de positivo hoje, 2) Identifique 1 aprendizado sobre meu padrão, 3) Defina apenas a próxima ação para amanhã. Tom: objetivo, gentil, sem drama.'},
+{n:'P13',d:'Reframear a narrativa de procrastinação',t:'Tenho me chamado de [preguiçoso / indisciplinado / desorganizado] por causa da minha procrastinação. Quero reescrever essa narrativa de forma mais precisa e útil — sem me isentar de responsabilidade, mas também sem me sabotar. Me ajude a construir uma narrativa mais precisa sobre meu padrão e o que estou fazendo para mudar.'},
+]},
+
+{ey:'Capítulo 7',ttl:'Ambiente e gatilhos de foco — o design do seu espaço de trabalho',h:`
+<p class="body-p">Você não precisa de mais força de vontade. Você precisa de um ambiente que torne o foco fácil e a distração difícil. O design do ambiente é mais poderoso do que qualquer hábito mental.</p>
+<div class="sec-t">7.1 — Os 3 princípios do ambiente produtivo</div>
+<ul class="bl">
+  <li><strong>Fricção para distração:</strong> cada camada extra entre você e a distração reduz a probabilidade de ceder. Desative notificações, coloque o celular em outro cômodo, use extensões de bloqueio.</li>
+  <li><strong>Facilidade para foco:</strong> o ambiente do Bloco A deve estar pronto antes de começar — aplicativos abertos, documentos carregados, café feito. Elimine a configuração durante o bloco.</li>
+  <li><strong>Sinais visuais de modo:</strong> use gatilhos físicos para sinalizar ao cérebro que "agora é hora de foco" — fones de ouvido, uma vela, uma xícara específica, um local fixo.</li>
+</ul>
+<div class="sec-t">7.2 — Ambientes digitais e físicos</div>
+<div class="tbl-wrap" style="overflow-x:auto">
+<table class="tbl">
+  <tr><th>Elemento</th><th>Para foco</th><th>Para evitar</th></tr>
+  <tr><td>Notificações</td><td>Todas desativadas durante Bloco A</td><td>Notificações ativas de qualquer app</td></tr>
+  <tr><td>Celular</td><td>Em outro cômodo ou de cabeça para baixo</td><td>Na mesa, mesmo em silêncio</td></tr>
+  <tr><td>Abas do browser</td><td>Apenas as da tarefa atual abertas</td><td>E-mail, redes sociais abertas em paralelo</td></tr>
+  <tr><td>Música</td><td>Instrumental, sons da natureza, ruído branco</td><td>Músicas com letra que você conhece</td></tr>
+  <tr><td>Espaço físico</td><td>Mesa limpa, luz adequada, temperatura confortável</td><td>Cama, sofá, ambientes com TV ligada</td></tr>
+</table>
+</div>
+<div class="box box-p"><div class="box-lbl">Gatilho de início rápido</div><div class="box-txt">Crie um ritual de 2 minutos de "entrada no modo foco": feche tudo irrelevante, coloque os fones, abra apenas o documento da tarefa A e use o Prompt 14. Esse ritual treina o cérebro a associar os gatilhos com o estado de foco.</div></div>
+`,pr:[
+{n:'P14',d:'Ritual de entrada no modo foco',t:'Vou começar meu Bloco A agora. Tarefa: [descreva especificamente]. Tempo disponível: [X minutos]. Resultado esperado ao final: [descreva o critério de conclusão]. Me dê: 1) As 3 primeiras ações físicas para começar agora, 2) Um lembrete de por que essa tarefa importa, 3) Uma pergunta para eu me fazer se sentir vontade de procrastinar durante o bloco.'},
+{n:'P15',d:'Auditoria do ambiente de trabalho',t:'Descreva seu ambiente de trabalho atual e seus maiores gatilhos de distração: [descreva]. Quero otimizá-lo para o Bloco A. Me dê: 1) As 3 mudanças de maior impacto no ambiente físico, 2) As 3 mudanças de maior impacto no ambiente digital, 3) Um ritual de início de 2 minutos personalizado para meu contexto.'},
+]},
+
+{ey:'Capítulo 8',ttl:'Seu sistema definitivo — montando o método completo',h:`
+<p class="body-p">Chegamos ao ponto de integração. Tudo que aprendemos nos 7 capítulos anteriores se combina em um sistema coerente — personalizado para você, sustentável a longo prazo e adaptável aos dias ruins.</p>
+<div class="sec-t">8.1 — Os 5 componentes do seu sistema</div>
+<ol class="nl">
+  <li><strong>Mapa de energia pessoal:</strong> você sabe seus picos e vales (cap. 5). O Bloco A vai sempre no pico.</li>
+  <li><strong>Rotina matinal:</strong> 60 minutos de ativação com planejamento de blocos (cap. 4).</li>
+  <li><strong>Sistema dos 3 blocos:</strong> cada dia tem estrutura clara. Nada entra no Bloco A que não seja trabalho profundo (cap. 2).</li>
+  <li><strong>Protocolo de desbloqueio:</strong> quando travar, você tem o Prompt 7. Quando cair, tem o Prompt 12. O sistema prevê os dias ruins (caps. 3 e 6).</li>
+  <li><strong>Design de ambiente:</strong> seu espaço físico e digital reduzem a fricção para o foco (cap. 7).</li>
+</ol>
+<div class="sec-t">8.2 — Revisão semanal com IA</div>
+<p class="body-p">Todo domingo, 20 minutos de revisão semanal com o ChatGPT. Esse ritual fecha a semana, extrai aprendizados e prepara o próximo ciclo — sem julgamento, com clareza.</p>
+<div class="box box-g"><div class="box-lbl">Sistema sustentável vs. sistema perfeito</div><div class="box-txt">O melhor sistema não é o mais elaborado — é o que você realmente usa nos dias difíceis. Simplifique até o ponto em que, mesmo no pior dia, você consegue executar pelo menos o Bloco A.</div></div>
+<div class="sec-t">8.3 — Prompts finais do sistema</div>
+`,pr:[
+{n:'P16',d:'Revisão semanal completa',t:'Estou fazendo minha revisão semanal de domingo. Semana que passou: Concluí [liste o que completou]. Não concluí: [liste o que ficou]. Momentos de alto foco: [descreva]. Momentos de queda: [descreva]. Com base nisso: 1) Quais são os 3 aprendizados mais importantes desta semana sobre meu padrão de produtividade? 2) O que ajustei no sistema funciona? 3) Quais são os 3 objetivos da próxima semana e o Bloco A de segunda-feira?'},
+{n:'P17',d:'Montar seu sistema personalizado',t:'Com base em tudo que aprendi sobre meu padrão: Tipo de procrastinador: [perfeccionista/sobrecarregado/disperso]. Horário de pico de energia: [período]. Maiores gatilhos de distração: [liste]. Tarefas que mais procrastino: [liste]. Monte meu sistema personalizado anti-procrastinação com: rotina matinal, estrutura de blocos diários, protocolo de desbloqueio e 3 regras inegociáveis para manter o sistema nos dias ruins.'},
+]},
+];
+
+let cur2=0, done2=new Set();
+
+function renderCap2(i){
+  const c=CAPS2[i];
+  let h='';
+  if(c.ey) h+=`<div class="ey">${c.ey}</div>`;
+  h+=`<div class="ttl">${c.ttl}</div>${c.h}`;
+  if(c.pr.length){
+    c.pr.forEach((p,pi)=>{
+      const id=`p2_${i}_${pi}`;
+      h+=`<div class="pcard"><div class="ph"><span class="pb-g">${p.n}</span><button class="cpb" id="b_${id}" onclick="cp2('${id}',this)"><i class="ti ti-copy" style="font-size:13px" aria-hidden="true"></i> Copiar</button></div><div class="pdesc">${p.d}</div><div class="ptxt" id="${id}">${p.t}</div></div>`;
+    });
+  }
+  h+=`<div class="ftr"><button class="mk-btn ${done2.has(i)?'done':''}" id="mk2_${i}" onclick="mk2(${i})"><i class="ti ti-${done2.has(i)?'check':'circle-check'}" style="font-size:14px" aria-hidden="true"></i> ${done2.has(i)?'Concluído':'Marcar como lido'}</button><div class="nvbtns"><button class="nvb" onclick="g2(${i-1})" ${i===0?'disabled':''}><i class="ti ti-arrow-left" style="font-size:13px" aria-hidden="true"></i> Anterior</button><button class="nvb" onclick="g2(${i+1})" ${i===CAPS2.length-1?'disabled':''}>Próximo <i class="ti ti-arrow-right" style="font-size:13px" aria-hidden="true"></i></button></div></div>`;
+  return h;
+}
+
+function g2(i){
+  if(i<0||i>=CAPS2.length)return;
+  document.querySelectorAll('#app2 .ni').forEach((el,j)=>el.classList.toggle('on',j===i));
+  document.getElementById('ct2').innerHTML=renderCap2(i);
+  document.getElementById('ct2').scrollTop=0;
+  cur2=i;
+}
+
+function mk2(i){
+  done2.add(i);
+  const b=document.getElementById('mk2_'+i);
+  if(b){b.className='mk-btn done';b.innerHTML='<i class="ti ti-check" style="font-size:14px" aria-hidden="true"></i> Concluído';}
+  const d=document.getElementById('d2-'+i);
+  if(d)d.className='ni-dot ok';
+  const total=CAPS2.length-1;
+  const completed=[...done2].filter(x=>x>0).length;
+  document.getElementById('p2-fill').style.width=Math.round(completed/total*100)+'%';
+  document.getElementById('p2-lbl').textContent=completed+' / '+total;
+}
+
+function cp2(id,btn){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const text=el.innerText;
+  const ok=()=>{
+    btn.innerHTML='<i class="ti ti-check" style="font-size:13px" aria-hidden="true"></i> Copiado!';
+    btn.className='cpb ok';
+    setTimeout(()=>{btn.innerHTML='<i class="ti ti-copy" style="font-size:13px" aria-hidden="true"></i> Copiar';btn.className='cpb';},2000);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(ok).catch(()=>fallbackCopy2(text, ok));
+  }else{
+    fallbackCopy2(text, ok);
+  }
+}
+
+function fallbackCopy2(text, ok){
+  const ta=document.createElement('textarea');
+  ta.value=text;
+  ta.style.position='fixed';
+  ta.style.opacity='0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try{document.execCommand('copy'); ok();}catch(e){alert('Não foi possível copiar automaticamente. Selecione o texto manualmente.');}
+  document.body.removeChild(ta);
+}
+
+g2(0);
+</script>
